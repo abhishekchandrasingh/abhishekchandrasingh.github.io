@@ -1,0 +1,38 @@
+<div class="flex justify-between items-start border-b border-slate-800 pb-4 mb-6">
+    <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">AI Architecture</span>
+        <h4 class="text-2xl font-bold text-white mt-1">Stateless Agentic Execution with Continuous ML Feedback</h4>
+    </div>
+    <button onclick="closeCaseStudy()" class="cursor-pointer text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700 bg-slate-950 p-1.5 rounded-lg">
+        <i data-lucide="x" class="w-5 h-5"></i>
+    </button>
+</div>
+
+<div class="space-y-6 text-sm text-slate-300 leading-relaxed">
+    <div>
+        <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2">
+            <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i> The Strategy: Stateless Execution for High SLAs
+        </h5>
+        <p>To eliminate system drift, non-deterministic routing loops, and memory leaks, the enterprise AI agent is engineered to execute completely statelessly. It processes input payloads as a pure compute utility, bounded tightly at runtime by centralized Rule, Framework, and Execution Engines.</p>
+    </div>
+    <div>
+        <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2">
+            <i data-lucide="refresh-cw" class="w-4 h-4 text-emerald-400"></i> The Continuous Learning Loop
+        </h5>
+        <p>While execution remains stateless, telemetry is persistent. Every single execution log is captured alongside structural correlation data. These rich data packets are streamed directly into <strong>Azure Databricks</strong>, where machine learning models analyze execution successes, context drift, and human-in-the-loop decisions to continuously optimize the agent's core prompt weights and decision boundaries for subsequent runs.</p>
+    </div>
+
+    <div class="p-4 rounded-lg bg-slate-950 border border-slate-800 font-mono text-xs text-emerald-400 overflow-x-auto">
+[Stateless Agent Run] ──> [Correlated Execution Logs] ──> [Azure Databricks ML Processing]
+         ▲                                                               │
+         │                                                               ▼
+         └───────────── (Continuous Upstream Model Optimization) ────────┘
+    </div>
+
+    <div>
+        <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-4 h-4 text-cyan-400"></i> System Governance & Auditability
+        </h5>
+        <p>By pairing stateless operational execution with an out-of-band Databricks ML feedback loop, the system achieves a state of self-improving intelligence without violating enterprise risk constraints. High-risk decisions are safely routed to Human-in-the-Loop validation gateways, with those human interventions flowing back into Databricks as reinforcement learning signals.</p>
+    </div>
+</div>
