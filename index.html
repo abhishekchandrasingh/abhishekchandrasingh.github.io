@@ -48,6 +48,12 @@
                     <a href="#case-studies" class="inline-flex items-center gap-2 rounded-lg bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-all hover:bg-cyan-400 shadow-lg shadow-cyan-500/20">
                         <i data-lucide="terminal" class="w-4 h-4"></i> View Case Studies
                     </a>
+                    
+                    <!-- CAREER JOURNEY EVOLUTION TRIGGER -->
+                    <button onclick="loadModalView('career-journey.html')" class="cursor-pointer inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-slate-800 hover:text-white">
+                        <i data-lucide="milestone" class="w-4 h-4 text-cyan-400"></i> Trace 15-Year Evolution Journey
+                    </button>
+
                     <button onclick="loadModalView('contact.html')" class="cursor-pointer inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-slate-800 hover:text-white">
                         <i data-lucide="message-square" class="w-4 h-4"></i> Initiate Technical Discussion
                     </button>
@@ -159,7 +165,7 @@
                         Read Case Study <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
-                
+
                 <!-- Case Study Card 2 -->
                 <div class="group relative rounded-xl border border-slate-900 bg-slate-900/20 p-8 transition-all hover:bg-slate-900/40 hover:border-slate-800 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center">
                     <div class="max-w-2xl">
@@ -173,23 +179,23 @@
                         Read Case Study <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
+
+                <!-- Case Study Card 3: GitHub Copilot Matrix -->
+                <div class="group relative rounded-xl border border-slate-900 bg-slate-900/20 p-8 transition-all hover:bg-slate-900/40 hover:border-slate-800 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center">
+                    <div class="max-w-2xl">
+                        <div class="text-xs font-bold uppercase tracking-widest text-indigo-400 mb-2">Engineering Optimization</div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-300 transition-colors">Enterprise GitHub Copilot Adaptation & ROI Analytics Matrix</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            How we operationalized GitHub Copilot across global engineering teams—standardizing context instruction files, engineering AI-friendly repository configurations, and building an automated telemetry analytics pipeline to measure financial returns on AI licensing investments.
+                        </p>
+                    </div>
+                    <button onclick="loadModalView('case-study-copilot.html')" class="cursor-pointer shrink-0 inline-flex items-center gap-1 text-sm font-semibold text-white border border-slate-700 rounded-lg px-4 py-2 bg-slate-950 transition-all hover:bg-slate-900 hover:border-indigo-500/50 group-hover:translate-x-1">
+                        Read Case Study <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
             </div>
         </section>
 
-        <!-- Case Study Card 3: AI Adaptation Journey -->
-<div class="group relative rounded-xl border border-slate-900 bg-slate-900/20 p-8 transition-all hover:bg-slate-900/40 hover:border-slate-800 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center">
-    <div class="max-w-2xl">
-        <div class="text-xs font-bold uppercase tracking-widest text-indigo-400 mb-2">Engineering Optimization</div>
-        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-300 transition-colors">Enterprise GitHub Copilot Adaptation & ROI Analytics Matrix</h3>
-        <p class="text-sm text-slate-400 leading-relaxed">
-            How we operationalized GitHub Copilot across global engineering teams—standardizing context instruction files, engineering AI-friendly repository configurations, and building an automated telemetry analytics pipeline to measure financial returns on AI licensing investments.
-        </p>
-    </div>
-    <button onclick="loadModalView('case-study-copilot.html')" class="cursor-pointer shrink-0 inline-flex items-center gap-1 text-sm font-semibold text-white border border-slate-700 rounded-lg px-4 py-2 bg-slate-950 transition-all hover:bg-slate-900 hover:border-indigo-500/50 group-hover:translate-x-1">
-        Read Case Study <i data-lucide="arrow-right" class="w-4 h-4"></i>
-    </button>
-</div>
-        
         <!-- Contact Section -->
         <section id="contact" class="py-16 text-center">
             <h2 class="text-2xl font-bold tracking-tight text-white mb-4">Start a Technical Discussion</h2>
@@ -219,13 +225,60 @@
         </div>
     </dialog>
 
+    <!-- MASTER SUCCESS ROUTING DIALOG -->
+    <dialog id="successRoutingModal" class="items-center justify-center p-4 bg-transparent border-0 outline-none w-full max-w-md">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl p-6 sm:p-8">
+            <div class="flex justify-between items-start border-b border-slate-800 pb-4 mb-4">
+                <div>
+                    <h4 class="text-lg font-bold text-white">Action Routing Matrix</h4>
+                    <p class="text-xs text-slate-400 mt-0.5">Parameters structured successfully.</p>
+                </div>
+                <button onclick="closeSuccessModal()" class="cursor-pointer text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700 bg-slate-950 p-1.5 rounded-lg">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4 text-sm mt-4">
+                <p class="text-xs text-slate-300 leading-relaxed">
+                    Your communications payload has been compiled. Choose an execution gateway below to route the message or copy the destination coordinates manually.
+                </p>
+
+                <!-- Communication Hub Card -->
+                <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 space-y-3">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-cyan-400 block mb-1">Destination Target</span>
+                        <div class="flex items-center justify-between bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-lg font-mono text-xs">
+                            <span class="text-slate-200">contact@abhishekchandrasingh.dev</span>
+                            <button onclick="copyToClipboard('contact@abhishekchandrasingh.dev', this)" class="text-slate-400 hover:text-white flex items-center gap-1 transition-colors cursor-pointer">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i> <span>Copy</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 border-t border-slate-900">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 block mb-1">Launch Delivery Portal</span>
+                        <div class="grid grid-cols-2 gap-2.5 mt-1">
+                            <a id="gmailLink" target="_blank" class="inline-flex items-center justify-center gap-1.5 rounded-lg border border-slate-800 bg-slate-900/50 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-all">
+                                <i data-lucide="mail" class="w-3.5 h-3.5 text-rose-400"></i> Web Gmail
+                            </a>
+                            <a id="nativeMailLink" class="inline-flex items-center justify-center gap-1.5 rounded-lg border border-slate-800 bg-slate-900/50 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-all">
+                                <i data-lucide="monitor" class="w-3.5 h-3.5 text-cyan-400"></i> Native App
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
     <script>
         lucide.createIcons();
 
         const globalModal = document.getElementById('globalModalContainer');
+        const successModal = document.getElementById('successRoutingModal');
         const contentTarget = document.getElementById('modalContentTarget');
 
-        // Dynamic Asynchronous File Fetcher Engine
+        // Dynamic File Fetcher Engine
         async function loadModalView(fileName) {
             globalModal.showModal();
             document.body.style.overflow = 'hidden';
@@ -257,42 +310,43 @@
                 </div>`;
         }
 
-        // Contact Processing Engine (Triggered out of contact.html)
-        function submitContactForm() {
-            const sender = document.getElementById('senderEmail');
-            const reason = document.getElementById('connectReason');
+        function closeSuccessModal() {
+            successModal.close();
+            document.body.style.overflow = 'auto';
+        }
 
-            if (!sender.checkValidity() || !reason.checkValidity()) {
-                sender.reportValidity() || reason.reportValidity();
-                return;
-            }
+        // Intercepts the submit trigger inside contact.html securely
+        function submitContactForm(event) {
+            event.preventDefault();
 
-            const targetEmail = "your.email@example.com";
-            const subjectLine = "Technical Discussion: Enterprise Systems Integration";
-            const emailBody = `Sender: ${sender.value}\n\nContext:\n${reason.value}`;
+            const sender = document.getElementById('senderEmail').value;
+            const reason = document.getElementById('connectReason').value;
 
-            // Preconfigure action hooks dynamically inside the streamed HTML layout
+            const targetEmail = "contact@abhishekchandrasingh.dev";
+            const subjectLine = "Technical Discussion: Enterprise Systems Strategy";
+            const emailBody = `Sender Connection: ${sender}\n\nContext Profile:\n=========================================\n${reason}\n=========================================`;
+
+            // Configure routing paths
             document.getElementById('nativeMailLink').href = `mailto:${targetEmail}?subject=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(emailBody)}`;
             document.getElementById('gmailLink').href = `https://mail.google.com/mail/?view=cm&fs=1&to=${targetEmail}&su=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(emailBody)}`;
 
-            // Toggle panels
-            document.getElementById('contactFormContainer').classList.add('hidden');
-            const successPanel = document.getElementById('contactSuccessContainer');
-            successPanel.classList.remove('hidden');
-            
+            // Toggle screens cleanly
+            closeCaseStudy();
+            successModal.showModal();
             lucide.createIcons();
         }
 
-        // Helper Utility to copy details manually
         function copyToClipboard(text, buttonElement) {
             navigator.clipboard.writeText(text).then(() => {
                 const span = buttonElement.querySelector('span');
                 span.textContent = "Copied!";
-                setTimeout(() => { span.textContent = "Copy Address"; }, 2000);
+                setTimeout(() => { span.textContent = "Copy"; }, 2000);
             });
         }
 
+        // Click outside backdrop handlers
         globalModal.addEventListener('click', (e) => { if (e.target === globalModal) closeCaseStudy(); });
+        successModal.addEventListener('click', (e) => { if (e.target === successModal) closeSuccessModal(); });
     </script>
 </body>
 </html>
