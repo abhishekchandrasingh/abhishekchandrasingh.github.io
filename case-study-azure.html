@@ -1,0 +1,42 @@
+<div class="flex justify-between items-start border-b border-slate-800 pb-4 mb-6">
+    <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">Data Engineering Pipeline</span>
+        <h4 class="text-2xl font-bold text-white mt-1">Azure Databricks ML Feature Ingestion & Log Correlation</h4>
+    </div>
+    <button onclick="closeCaseStudy()" class="cursor-pointer text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700 bg-slate-950 p-1.5 rounded-lg">
+        <i data-lucide="x" class="w-5 h-5"></i>
+    </button>
+</div>
+
+<div class="space-y-6 text-sm text-slate-300 leading-relaxed">
+    <div>
+        <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2">
+            <i data-lucide="database" class="w-4 h-4 text-amber-400"></i> The Architecture Context
+        </h5>
+        <p>The core enterprise product maintains a strict, non-negotiable dependency on relational SQL Server clusters for transactional operations. To build continuous learning loops without impacting production database performance or altering transactional codebases, a decoupled telemetry layer was required.</p>
+    </div>
+    <div>
+        <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2">
+            <i data-lucide="git-merge" class="w-4 h-4 text-cyan-400"></i> The Databricks Log Correlation Engine
+        </h5>
+        <p>Engineered an asynchronous pipeline to stream execution telemetry, transaction payloads, and trace IDs out of SQL Server environments into Azure Databricks. Databricks acts exclusively as the Machine Learning processing engine, handling heavy data preparation, feature extraction, and correlation modeling away from production OLTP workloads.</p>
+    </div>
+    
+    <div class="p-4 rounded-lg bg-slate-950 border border-slate-800 font-mono text-xs text-cyan-400 overflow-x-auto">
+[SQL Server OLTP] ──(Asynchronous Trace Export)──> [Azure Databricks ML Compute Layer]
+                                                               │
+                                                               ▼
+[Continuous Agent Fine-Tuning] <── [Model Evaluation Registry] <── [Correlation & Feature Matrix]
+    </div>
+
+    <div>
+        <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2">
+            <i data-lucide="bar-chart-3" class="w-4 h-4 text-emerald-400"></i> Business & Engineering ROI
+        </h5>
+        <ul class="list-disc pl-5 space-y-1.5 text-slate-400">
+            <li><strong>Zero Production Friction:</strong> Isolated compute ensures heavy ML training algorithms never impact core SQL Server performance.</li>
+            <li><strong>High-Fidelity Tracking:</strong> Maintained end-to-end correlation across distributed agent steps for precise data lineage.</li>
+            <li><strong>Cost Efficiency:</strong> Utilized ephemeral Databricks clusters that automatically scale down once log ingestion and model optimization cycles complete.</li>
+        </ul>
+    </div>
+</div>
