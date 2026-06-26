@@ -34,60 +34,170 @@
         
         <!-- Hero Section -->
         <section id="about" class="py-12 sm:py-20 border-b border-slate-900">
-            <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-400 mb-6">
-                    <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Tech Thoughts
-                </div>
-                <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl mb-6">
-                    Enterprise Cloud Architect & <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">R&D Tech Executive</span>
-                </h1>
-                <p class="text-lg text-slate-400 leading-relaxed mb-8">
-                    15+ years of technical leadership driving global enterprise SaaS infrastructure, high-performance cloud ecosystems, and modern autonomous AI orchestration frameworks. Specializing in bridging deep technical delivery with corporate financial strategy and EBITDA optimization.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#case-studies" class="inline-flex items-center gap-2 rounded-lg bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-all hover:bg-cyan-400 shadow-lg shadow-cyan-500/20">
-                        <i data-lucide="terminal" class="w-4 h-4"></i> View Case Studies
-                    </a>
-                    
-                    <!-- CAREER JOURNEY EVOLUTION TRIGGER -->
-                    <button onclick="loadModalView('career-journey.html')" class="cursor-pointer inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-slate-800 hover:text-white">
-                        <i data-lucide="milestone" class="w-4 h-4 text-cyan-400"></i> Trace 15-Year Evolution Journey
-                    </button>
+            <div class="grid gap-12 md:grid-cols-3 items-center">
+                <div class="md:col-span-2">
+                    <div class="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-400 mb-6">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Tech Thoughts
+                    </div>
+                    <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl mb-6">
+                        Enterprise Cloud Architect & <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">R&D Tech Executive</span>
+                    </h1>
+                    <p class="text-lg text-slate-400 leading-relaxed mb-8">
+                        15+ years of technical leadership driving global enterprise SaaS infrastructure, high-performance cloud ecosystems, and modern autonomous AI orchestration frameworks. Specializing in bridging deep technical delivery with corporate financial strategy and EBITDA optimization.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#case-studies" class="inline-flex items-center gap-2 rounded-lg bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-all hover:bg-cyan-400 shadow-lg shadow-cyan-500/20">
+                            <i data-lucide="terminal" class="w-4 h-4"></i> View Case Studies
+                        </a>
+                        
+                        <!-- CAREER JOURNEY EVOLUTION TRIGGER -->
+                        <button onclick="loadModalView('career-journey.html')" class="cursor-pointer inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-slate-800 hover:text-white">
+                            <i data-lucide="milestone" class="w-4 h-4 text-cyan-400"></i> Trace 15-Year Evolution Journey
+                        </button>
 
-                    <button onclick="loadModalView('contact.html')" class="cursor-pointer inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-slate-800 hover:text-white">
-                        <i data-lucide="message-square" class="w-4 h-4"></i> Initiate Technical Discussion
-                    </button>
+                        <button onclick="loadModalView('contact.html')" class="cursor-pointer inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-slate-800 hover:text-white">
+                            <i data-lucide="message-square" class="w-4 h-4"></i> Initiate Technical Discussion
+                        </button>
+                    </div>
+                </div>
+                <div class="md:col-span-1 flex justify-center">
+                    <div class="relative group">
+                        <!-- Gradient Glow Backdrop -->
+                        <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-cyan-500 to-emerald-500 opacity-20 blur-md transition duration-1000 group-hover:opacity-40"></div>
+                        <!-- Profile Image Container -->
+                        <div class="relative w-56 h-56 sm:w-64 sm:h-64 rounded-2xl overflow-hidden border border-slate-800 bg-slate-950">
+                            <img src="profile.png" alt="Abhishek Singh" class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-500">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Leadership & Vision Section -->
+        <!-- Leadership & Governance Philosophy Section -->
         <section id="vision" class="py-16 border-b border-slate-900">
-            <div class="grid gap-8 md:grid-cols-5 items-center">
-                <div class="md:col-span-3">
-                    <h2 class="text-2xl font-bold tracking-tight text-white mb-4 flex items-center gap-2">
-                        <i data-lucide="eye" class="text-emerald-400 w-6 h-6"></i> AI Philosophy: Vision Over Hype
-                    </h2>
-                    <p class="text-base text-slate-300 leading-relaxed mb-4">
-                        Exploring and identifying true organizational AI requirements is key—and it is precisely where leadership and strategic vision come into play. True transformation is not about adopting unconstrained autonomous black boxes; it is about intentional, risk-managed design.
+            <h2 class="text-2xl font-bold tracking-tight text-white mb-10 flex items-center gap-2">
+                <i data-lucide="eye" class="text-emerald-400 w-6 h-6"></i> Executive Leadership & Governance Philosophy
+            </h2>
+            <div class="grid gap-6 lg:grid-cols-3">
+                <!-- Pillar 1: Cognitive Governance -->
+                <div class="bg-slate-900/30 border border-slate-800/80 rounded-xl p-6 hover:border-slate-700 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+                        <h3 class="text-base font-bold text-white">Cognitive Governance</h3>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                        True AI transformation is not about adopting unconstrained autonomous black boxes; it is about intentional, risk-managed design.
                     </p>
-                    <p class="text-base text-slate-400 leading-relaxed">
-                        My architectural North Star is ensuring a rigid <strong class="text-white font-semibold">Human-in-the-Loop (HITL) setup</strong>. I design systems with the absolute operational assurance that all automated steps executed by AI agents operate under the strict boundaries of corporate rule engines, compliance frameworks, and organizational data standards.
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        My architectural North Star is ensuring a rigid <strong>Human-in-the-Loop (HITL) setup</strong>. AI execution layers must be bound to strict organizational constraints, compliance frameworks, and SLA compliance loops.
                     </p>
                 </div>
-                <div class="md:col-span-2 bg-slate-900/40 border border-slate-800 rounded-xl p-6 space-y-4">
-                    <div class="flex gap-3 items-start">
-                        <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0"><i data-lucide="users" class="w-5 h-5"></i></div>
-                        <div>
-                            <h4 class="text-white font-semibold text-sm">Human-in-the-Loop Assurance</h4>
-                            <p class="text-xs text-slate-400 mt-1">Interventions wired into state validation cycles to prevent autonomous configuration drifts.</p>
-                        </div>
+
+                <!-- Pillar 2: Cloud Economics & FinOps -->
+                <div class="bg-slate-900/30 border border-slate-800/80 rounded-xl p-6 hover:border-slate-700 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 shrink-0"><i data-lucide="line-chart" class="w-5 h-5"></i></div>
+                        <h3 class="text-base font-bold text-white">Cloud Economics & FinOps</h3>
                     </div>
-                    <div class="flex gap-3 items-start">
-                        <div class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 shrink-0"><i data-lucide="sliders" class="w-5 h-5"></i></div>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                        Engineering decisions must align with corporate financial strategy, maximizing margin yields and EBITDA contribution.
+                    </p>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Every technical decision should be justified by cost metrics—from optimizing database licensing structures via decoupling telemetry to scaling down idle cloud compute clusters dynamically.
+                    </p>
+                </div>
+
+                <!-- Pillar 3: High-Performing Organization -->
+                <div class="bg-slate-900/30 border border-slate-800/80 rounded-xl p-6 hover:border-slate-700 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2 rounded-lg bg-indigo-500/10 text-indigo-400 shrink-0"><i data-lucide="users" class="w-5 h-5"></i></div>
+                        <h3 class="text-base font-bold text-white">High-Performance Teams</h3>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                        Scaling organizations by minimizing cognitive load, standardizing code patterns, and removing manual delivery debt.
+                    </p>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Standardizing repository structures and deploying custom context profiles within developer IDEs accelerates feature velocity, onboarding, and overall output quality.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- AI FINOPS STRATEGY MATRIX CONTAINER -->
+            <div id="roi-simulator-container" class="mt-8">
+                <div class="mt-8 bg-slate-900/50 border border-slate-800/80 rounded-xl p-6 sm:p-8">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 pb-6 border-b border-slate-800">
                         <div>
-                            <h4 class="text-white font-semibold text-sm">Deterministic Rule Engines</h4>
-                            <p class="text-xs text-slate-400 mt-1">AI execution layers are bound to strict organizational constraints and SLA compliance metrics.</p>
+                            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                <i data-lucide="line-chart" class="text-cyan-400 w-5 h-5"></i> The AI FinOps Paradigm: COGS to Revenue
+                            </h3>
+                            <p class="text-xs text-slate-400 mt-1">An executive framework detailing why AI efficiency must drive product expansion rather than headcount reduction.</p>
+                        </div>
+                        <span class="text-xs font-mono bg-cyan-500/10 border border-cyan-500/30 px-3 py-1 rounded-full text-cyan-400 shrink-0">Strategy Model</span>
+                    </div>
+
+                    <!-- Toggle buttons -->
+                    <div class="flex gap-2 mb-6 bg-slate-950 p-1 rounded-lg w-max border border-slate-850">
+                        <button id="btnParadigmA" onclick="switchParadigm('trap')" class="cursor-pointer px-4 py-1.5 rounded-md text-xs font-semibold bg-cyan-500 text-slate-950 transition-all">
+                            The Cost-Cut Trap
+                        </button>
+                        <button id="btnParadigmB" onclick="switchParadigm('straddle')" class="cursor-pointer px-4 py-1.5 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition-all">
+                            The Revenue Straddle
+                        </button>
+                    </div>
+
+                    <div class="grid gap-6 md:grid-cols-5 items-stretch">
+                        <!-- Text details -->
+                        <div class="md:col-span-3 flex flex-col justify-between space-y-4">
+                            <div id="paradigmContent" class="space-y-4">
+                                <h4 id="paradigmTitle" class="text-white font-bold text-sm">Paradigm: The Cost-Cut Trap (AI vs. Headcount)</h4>
+                                <p id="paradigmDesc" class="text-xs text-slate-300 leading-relaxed">
+                                    Treating AI solely as a tool to automate developer headcount turns technology into a zero-sum cost equation. As AI adoption scales, compute infrastructure expenses (API licenses, specialized vector indexes, GPU resource bounds) shift directly into COGS, offsetting marginal staff savings.
+                                </p>
+                                <div class="p-3 rounded-lg bg-rose-950/20 border border-rose-900/30 text-[11px] text-rose-350 leading-relaxed" id="paradigmImpact">
+                                    <strong>Critical Bottleneck:</strong> Flat business model with rising operational costs. Engineering becomes a pure cost center, locked in constant debates over compute budgets vs. staff reductions.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Strategy Matrix Visual -->
+                        <div class="md:col-span-2 bg-slate-950/80 border border-slate-800 rounded-xl p-5 flex flex-col justify-center space-y-4">
+                            <div class="space-y-3">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 block">Strategic Balance Sheet Effect</span>
+                                
+                                <div class="space-y-2">
+                                    <div class="flex justify-between text-[11px] text-slate-400 font-mono">
+                                        <span>AI Compute (COGS)</span>
+                                        <span id="statCogs" class="text-rose-455 font-bold">+ High Overhead</span>
+                                    </div>
+                                    <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden">
+                                        <div id="barCogs" class="bg-rose-500 h-full transition-all duration-500" style="width: 85%;"></div>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <div class="flex justify-between text-[11px] text-slate-400 font-mono">
+                                        <span>Engineering Capacity</span>
+                                        <span id="statCapacity" class="text-slate-400 font-bold">Underutilized</span>
+                                    </div>
+                                    <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden">
+                                        <div id="barCapacity" class="bg-slate-600 h-full transition-all duration-500" style="width: 30%;"></div>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <div class="flex justify-between text-[11px] text-slate-400 font-mono">
+                                        <span>Top-line Revenue Yield</span>
+                                        <span id="statRevenue" class="text-slate-500 font-bold">Flat / Inactive</span>
+                                    </div>
+                                    <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden">
+                                        <div id="barRevenue" class="bg-slate-700 h-full transition-all duration-500" style="width: 10%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 border-t border-slate-900/80 text-[10px] text-slate-400 text-center font-mono" id="paradigmResult">
+                                EBITDA Margin: <span class="text-rose-400 font-semibold">Decelerating</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -273,6 +383,99 @@
 
     <script>
         lucide.createIcons();
+
+        // Interactive AI FinOps Paradigm Toggler Logic
+        function switchParadigm(type) {
+            const btnA = document.getElementById('btnParadigmA');
+            const btnB = document.getElementById('btnParadigmB');
+            const title = document.getElementById('paradigmTitle');
+            const desc = document.getElementById('paradigmDesc');
+            const impact = document.getElementById('paradigmImpact');
+            const statCogs = document.getElementById('statCogs');
+            const statCapacity = document.getElementById('statCapacity');
+            const statRevenue = document.getElementById('statRevenue');
+            const barCogs = document.getElementById('barCogs');
+            const barCapacity = document.getElementById('barCapacity');
+            const barRevenue = document.getElementById('barRevenue');
+            const result = document.getElementById('paradigmResult');
+
+            if (type === 'trap') {
+                btnA.className = "cursor-pointer px-4 py-1.5 rounded-md text-xs font-semibold bg-cyan-500 text-slate-950 transition-all";
+                btnB.className = "cursor-pointer px-4 py-1.5 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition-all";
+                
+                title.textContent = "Paradigm: The Cost-Cut Trap (AI vs. Headcount)";
+                desc.textContent = "Treating AI solely as a tool to automate developer headcount turns technology into a zero-sum cost equation. As AI adoption scales, compute infrastructure expenses (API licenses, specialized vector indexes, GPU resource bounds) shift directly into COGS, offsetting marginal staff savings.";
+                
+                impact.className = "p-3 rounded-lg bg-rose-950/20 border border-rose-900/30 text-[11px] text-rose-300 leading-relaxed";
+                impact.innerHTML = "<strong>Critical Bottleneck:</strong> Flat business model with rising operational costs. Engineering becomes a pure cost center, locked in constant debates over compute budgets vs. staff reductions.";
+                
+                statCogs.className = "text-rose-450 font-bold";
+                statCogs.textContent = "+ High Overhead";
+                barCogs.style.width = "85%";
+                barCogs.className = "bg-rose-500 h-full transition-all duration-500";
+                
+                statCapacity.className = "text-slate-400 font-bold";
+                statCapacity.textContent = "Underutilized";
+                barCapacity.style.width = "30%";
+                barCapacity.className = "bg-slate-600 h-full transition-all duration-500";
+                
+                statRevenue.className = "text-slate-500 font-bold";
+                statRevenue.textContent = "Flat / Inactive";
+                barRevenue.style.width = "10%";
+                barRevenue.className = "bg-slate-700 h-full transition-all duration-500";
+                
+                result.innerHTML = `EBITDA Margin: <span class="text-rose-400 font-semibold">Decelerating</span>`;
+            } else {
+                btnB.className = "cursor-pointer px-4 py-1.5 rounded-md text-xs font-semibold bg-cyan-500 text-slate-950 transition-all";
+                btnA.className = "cursor-pointer px-4 py-1.5 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition-all";
+                
+                title.textContent = "Paradigm: The Revenue Straddle (Velocity to Scale)";
+                desc.textContent = "Transforming reclaimed developer hours into net-new product capabilities and accelerated delivery pipelines. AI is used as a growth multiplier—allowing a lean, hyper-efficient team to support massive market expansions and capture new high-margin customer revenue.";
+                
+                impact.className = "p-3 rounded-lg bg-emerald-950/20 border border-emerald-900/30 text-[11px] text-emerald-350 leading-relaxed";
+                impact.innerHTML = "<strong>Strategic Yield:</strong> Expands top-line revenue streams without scaling staff linearly. The rising AI infrastructure COGS is easily offset by the exponential increase in market-facing product volume.";
+                
+                statCogs.className = "text-emerald-455 font-bold";
+                statCogs.textContent = "Optimized COGS";
+                barCogs.style.width = "40%";
+                barCogs.className = "bg-emerald-500 h-full transition-all duration-500";
+                
+                statCapacity.className = "text-emerald-400 font-bold";
+                statCapacity.textContent = "100% Active";
+                barCapacity.style.width = "95%";
+                barCapacity.className = "bg-emerald-500 h-full transition-all duration-500";
+                
+                statRevenue.className = "text-emerald-450 font-bold";
+                statRevenue.textContent = "+ High Growth";
+                barRevenue.style.width = "85%";
+                barRevenue.className = "bg-emerald-500 h-full transition-all duration-500";
+                
+                result.innerHTML = `EBITDA Margin: <span class="text-emerald-400 font-semibold">Optimizing (+15% YoY)</span>`;
+            }
+        }
+
+        // Timeline Dynamic Filtering Logic
+        function filterTimeline(type, buttonElement) {
+            // Update filter button styles inside the modal container
+            const buttons = document.querySelectorAll('.timeline-filter-btn');
+            buttons.forEach(btn => {
+                btn.className = "timeline-filter-btn cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-slate-800 bg-slate-950 text-slate-400 hover:text-white transition-all";
+            });
+            buttonElement.className = "timeline-filter-btn cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-cyan-500 text-slate-950 transition-all";
+
+            // Filter timeline items
+            const items = document.querySelectorAll('.timeline-item');
+            items.forEach(item => {
+                const tags = item.getAttribute('data-timeline-tags') || '';
+                if (type === 'all' || tags.includes(type)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+
 
         const globalModal = document.getElementById('globalModalContainer');
         const successModal = document.getElementById('successRoutingModal');

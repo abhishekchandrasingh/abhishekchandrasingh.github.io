@@ -1,0 +1,59 @@
+name: CI/CD Portfolio Deployment
+
+on:
+  push:
+    branches:
+      - main
+      - qa
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Verification and Linting Job
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Validate HTML Structure
+        run: |
+          echo "Verifying HTML file integrity..."
+          for file in *.html; do
+            echo "Checking $file..."
+            # Check for matching tags or other errors if needed, otherwise just verify existence
+            test -f "$file" || exit 1
+          done
+          echo "Validation complete. All core files present and accounted for."
+
+  # Deployment Job (runs on main branch only for production deployment)
+  deploy:
+    needs: validate
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

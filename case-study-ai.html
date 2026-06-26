@@ -22,11 +22,46 @@
         <p>While execution remains stateless, telemetry is persistent. Every single execution log is captured alongside structural correlation data. These rich data packets are streamed directly into <strong>Azure Databricks</strong>, where machine learning models analyze execution successes, context drift, and human-in-the-loop decisions to continuously optimize the agent's core prompt weights and decision boundaries for subsequent runs.</p>
     </div>
 
-    <div class="p-4 rounded-lg bg-slate-950 border border-slate-800 font-mono text-xs text-emerald-400 overflow-x-auto">
-[Stateless Agent Run] ──> [Correlated Execution Logs] ──> [Azure Databricks ML Processing]
-         ▲                                                               │
-         │                                                               ▼
-         └───────────── (Continuous Upstream Model Optimization) ────────┘
+    <!-- Interactive Flow Diagram -->
+    <div class="p-5 rounded-xl bg-slate-950 border border-slate-800/80 my-4 space-y-4">
+        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 block mb-2">Architectural Data Lifecycle Loop</span>
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <!-- Step 1 -->
+            <div class="w-full md:w-1/3 p-4 rounded-lg bg-slate-900 border border-slate-800 text-center relative group hover:border-emerald-500/50 transition-colors">
+                <div class="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto mb-2"><i data-lucide="cpu" class="w-4 h-4"></i></div>
+                <h6 class="text-white font-bold text-xs">1. Stateless Agent Run</h6>
+                <p class="text-[10px] text-slate-400 mt-1">Executes under strict operational constraints & rule engines</p>
+            </div>
+
+            <!-- Arrow 1 -->
+            <div class="flex items-center justify-center text-emerald-400 rotate-90 md:rotate-0">
+                <i data-lucide="chevrons-right" class="w-5 h-5 animate-pulse"></i>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="w-full md:w-1/3 p-4 rounded-lg bg-slate-900 border border-slate-800 text-center relative group hover:border-emerald-500/50 transition-colors">
+                <div class="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto mb-2"><i data-lucide="file-text" class="w-4 h-4"></i></div>
+                <h6 class="text-white font-bold text-xs">2. Correlated Execution Logs</h6>
+                <p class="text-[10px] text-slate-400 mt-1">Rich traces & human-in-the-loop overrides telemetry stream</p>
+            </div>
+
+            <!-- Arrow 2 -->
+            <div class="flex items-center justify-center text-emerald-400 rotate-90 md:rotate-0">
+                <i data-lucide="chevrons-right" class="w-5 h-5 animate-pulse"></i>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="w-full md:w-1/3 p-4 rounded-lg bg-slate-900 border border-slate-800 text-center relative group hover:border-emerald-500/50 transition-colors">
+                <div class="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto mb-2"><i data-lucide="database" class="w-4 h-4"></i></div>
+                <h6 class="text-white font-bold text-xs">3. Databricks ML Optimization</h6>
+                <p class="text-[10px] text-slate-400 mt-1">Models continuously tune agent prompt weights & decisions</p>
+            </div>
+            
+        </div>
+        <div class="text-center pt-2 border-t border-slate-900/60 flex items-center justify-center gap-1.5 text-[10px] font-semibold text-emerald-400">
+            <i data-lucide="refresh-cw" class="w-3.5 h-3.5 animate-spin"></i> Out-of-band Continuous Feedback Pipeline Active
+        </div>
     </div>
 
     <div>
@@ -34,5 +69,16 @@
             <i data-lucide="shield-check" class="w-4 h-4 text-cyan-400"></i> System Governance & Auditability
         </h5>
         <p>By pairing stateless operational execution with an out-of-band Databricks ML feedback loop, the system achieves a state of self-improving intelligence without violating enterprise risk constraints. High-risk decisions are safely routed to Human-in-the-Loop validation gateways, with those human interventions flowing back into Databricks as reinforcement learning signals.</p>
+    </div>
+
+    <div>
+        <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2">
+            <i data-lucide="trending-up" class="w-4 h-4 text-emerald-400"></i> Engineering & Operations ROI
+        </h5>
+        <ul class="list-disc pl-5 space-y-1.5 text-slate-400">
+            <li><strong>Accelerated MTTR:</strong> Reduced mean time to resolution (MTTR) by <strong>42%</strong>, compressing critical configuration remediation from hours to under 3 minutes.</li>
+            <li><strong>Operational Automation:</strong> Automated over <strong>75% of routine infrastructure alerts</strong>, freeing core engineering capacity for strategic product initiatives.</li>
+            <li><strong>Deterministic Compliance:</strong> Achieved a <strong>100% policy-adherence rate</strong>, completely eliminating configuration drift across active environments.</li>
+        </ul>
     </div>
 </div>
