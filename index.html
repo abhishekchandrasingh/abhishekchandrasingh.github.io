@@ -20,6 +20,7 @@
             <div class="text-lg font-bold tracking-tight text-white">AS<span class="text-cyan-400">.dev</span></div>
             <nav class="flex space-x-8 text-sm font-medium text-slate-400">
                 <a href="#about" class="transition-colors hover:text-white">About</a>
+                <a href="#vision" class="transition-colors hover:text-white">Vision</a>
                 <a href="#experience" class="transition-colors hover:text-white">Expertise</a>
                 <a href="#case-studies" class="transition-colors hover:text-white">Case Studies</a>
                 <a href="#contact" class="transition-colors hover:text-white">Contact</a>
@@ -52,6 +53,39 @@
             </div>
         </section>
 
+        <!-- Leadership & Vision Section -->
+        <section id="vision" class="py-16 border-b border-slate-900">
+            <div class="grid gap-8 md:grid-cols-5 items-center">
+                <div class="md:col-span-3">
+                    <h2 class="text-2xl font-bold tracking-tight text-white mb-4 flex items-center gap-2">
+                        <i data-lucide="eye" class="text-emerald-400 w-6 h-6"></i> AI Philosophy: Vision Over Hype
+                    </h2>
+                    <p class="text-base text-slate-300 leading-relaxed mb-4">
+                        Exploring and identifying true organizational AI requirements is key—and it is precisely where leadership and strategic vision come into play. True transformation is not about adopting unconstrained autonomous black boxes; it is about intentional, risk-managed design.
+                    </p>
+                    <p class="text-base text-slate-400 leading-relaxed">
+                        My architectural North Star is ensuring a rigid <strong class="text-white font-semibold">Human-in-the-Loop (HITL) setup</strong>. I design systems with the absolute operational assurance that all automated steps executed by AI agents operate under the strict boundaries of corporate rule engines, compliance frameworks, and organizational data standards.
+                    </p>
+                </div>
+                <div class="md:col-span-2 bg-slate-900/40 border border-slate-800 rounded-xl p-6 space-y-4">
+                    <div class="flex gap-3 items-start">
+                        <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0"><i data-lucide="users" class="w-5 h-5"></i></div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Human-in-the-Loop Assurance</h4>
+                            <p class="text-xs text-slate-400 mt-1">Interventions wired into state validation cycles to prevent autonomous configuration drifts.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 shrink-0"><i data-lucide="sliders" class="w-5 h-5"></i></div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Deterministic Rule Engines</h4>
+                            <p class="text-xs text-slate-400 mt-1">AI execution layers are bound to strict organizational constraints and SLA compliance metrics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Technical Matrix Section -->
         <section id="experience" class="py-16 border-b border-slate-900">
             <h2 class="text-2xl font-bold tracking-tight text-white mb-10 flex items-center gap-2">
@@ -76,10 +110,10 @@
                     <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4">
                         <i data-lucide="cpu"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-white mb-2">AI, Devops & Automation</h3>
+                    <h3 class="text-lg font-semibold text-white mb-2">AI, DevOps & Automation</h3>
                     <p class="text-sm text-slate-400 mb-4">Implementing intelligent workflows and deep infrastructure auto-remediation.</p>
                     <div class="flex flex-wrap gap-1.5">
-                        <span class="bg-slate-950 text-slate-300 text-xs px-2.5 py-1 rounded border border-slate-800">Agentic AI Engines</span>
+                        <span class="bg-slate-950 text-slate-300 text-xs px-2.5 py-1 rounded border border-slate-800">Stateless AI Engines</span>
                         <span class="bg-slate-950 text-slate-300 text-xs px-2.5 py-1 rounded border border-slate-800">Azure Databricks</span>
                         <span class="bg-slate-950 text-slate-300 text-xs px-2.5 py-1 rounded border border-slate-800">GPO Automation</span>
                     </div>
@@ -110,7 +144,7 @@
             </div>
 
             <div class="space-y-6">
-                <!-- Case Study Card -->
+                <!-- Case Study Card 1: Cloud -->
                 <div class="group relative rounded-xl border border-slate-900 bg-slate-900/20 p-8 transition-all hover:bg-slate-900/40 hover:border-slate-800 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center">
                     <div class="max-w-2xl">
                         <div class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-2">Cloud Optimization & Scalability</div>
@@ -120,6 +154,20 @@
                         </p>
                     </div>
                     <button onclick="openModal()" class="cursor-pointer shrink-0 inline-flex items-center gap-1 text-sm font-semibold text-white border border-slate-700 rounded-lg px-4 py-2 bg-slate-950 transition-all hover:bg-slate-900 hover:border-cyan-500/50 group-hover:translate-x-1">
+                        Read Case Study <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <!-- Case Study Card 2: Autonomous AI -->
+                <div class="group relative rounded-xl border border-slate-900 bg-slate-900/20 p-8 transition-all hover:bg-slate-900/40 hover:border-slate-800 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center">
+                    <div class="max-w-2xl">
+                        <div class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Agentic Infrastructure & Governance</div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-emerald-300 transition-colors">Orchestrating Gated, Stateless Multi-Agent Execution Engines</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            How we engineered a stateless agent framework managed by a central Rule Engine and Execution Engine to fulfill strict enterprise operational SLAs and maintain reliable Human-in-the-Loop workflows.
+                        </p>
+                    </div>
+                    <button onclick="openAiModal()" class="cursor-pointer shrink-0 inline-flex items-center gap-1 text-sm font-semibold text-white border border-slate-700 rounded-lg px-4 py-2 bg-slate-950 transition-all hover:bg-slate-900 hover:border-emerald-500/50 group-hover:translate-x-1">
                         Read Case Study <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
@@ -144,7 +192,7 @@
 
     </main>
 
-    <!-- SYSTEM CASE STUDY MODAL -->
+    <!-- CLOUD CASE STUDY MODAL -->
     <div id="caseStudyModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-3xl max-h-[85vh] overflow-y-auto shadow-2xl p-6 sm:p-8">
             <div class="flex justify-between items-start border-b border-slate-800 pb-4 mb-6">
@@ -157,7 +205,6 @@
                 </button>
             </div>
             
-            <!-- Structural Case Study Narrative -->
             <div class="space-y-6 text-sm text-slate-300 leading-relaxed">
                 <div>
                     <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2"><i data-lucide="alert-circle" class="w-4 h-4 text-amber-400"></i> The Architectural Problem</h5>
@@ -183,15 +230,89 @@
         </div>
     </div>
 
-    <!-- Initialize Lucide Icons & Modal Controls -->
+    <!-- AI CASE STUDY MODAL -->
+    <div id="aiCaseStudyModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-3xl max-h-[85vh] overflow-y-auto shadow-2xl p-6 sm:p-8">
+            <div class="flex justify-between items-start border-b border-slate-800 pb-4 mb-6">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Production Review</span>
+                    <h4 class="text-2xl font-bold text-white mt-1">Orchestrating Enterprise Agentic AI Infrastructure</h4>
+                </div>
+                <button onclick="closeAiModal()" class="cursor-pointer text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700 bg-slate-950 p-1.5 rounded-lg">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <div class="space-y-6 text-sm text-slate-300 leading-relaxed">
+                <div>
+                    <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2">
+                        <i data-lucide="alert-circle" class="w-4 h-4 text-amber-400"></i> The Operational Challenge: Non-Determinism vs. High SLAs
+                    </h5>
+                    <p>
+                        Deploying large language models into enterprise environments introduces major challenges regarding non-deterministic logic and unexpected behavior loops. For high-SLA enterprise ecosystems, allowing an autonomous agent to hold state locally creates system vulnerabilities and risks context drift outside of regulatory bounds.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-cyan-400"></i> The Strategy: High-SLA Determinism via Stateless Execution
+                    </h5>
+                    <p>
+                        Deliberately rejected stateful configurations to eliminate sticky routing dependencies and potential system drift. Instead, engineered an idempotent, <strong>stateless AI agent model</strong>. This model processes input context packets as a pure compute utility, strictly constrained at execution time by parameters passed from our centralized Rule Engine, Framework Engine, and Execution Engine.
+                    </p>
+                </div>
+
+                <!-- ASCII Architecture Topology -->
+                <div class="p-4 rounded-lg bg-slate-950 border border-slate-800 font-mono text-xs text-emerald-400 overflow-x-auto">
+[User Transaction Payload] ──> [Framework Engine] ──> [Rule Engine Validation]
+                                                           │ (Enforced Boundaries)
+                                                           ▼
+[Human-in-the-Loop Gateway] <── [Execution Engine] <── [Stateless Compute Agent]
+                </div>
+
+                <div>
+                    <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2">
+                        <i data-lucide="users" class="w-4 h-4 text-indigo-400"></i> Human-in-the-Loop & System Governance
+                    </h5>
+                    <p>
+                        To guarantee system-wide compliance, state serialization is decoupled from the agent and externalized to a secure tier. High-risk execution vectors are intercepted by an immutable <strong>Human-in-the-Loop verification layer</strong>, forcing structural state validation against organizational guidelines before transactions finalize.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Production Engineering Impacts
+                    </h5>
+                    <ul class="list-disc pl-5 space-y-1.5 text-slate-400">
+                        <li>Achieved absolute auditability with fully replicable, self-contained transaction histories.</li>
+                        <li>Protected critical runtime SLAs by allowing the execution engine to seamlessly terminate and recycle hanging threads without state corruption.</li>
+                        <li>Enforced uniform alignment across all automated workloads against existing organizational constraints.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Initialize Lucide Icons & Multi-Modal Controls -->
     <script>
+        // Initialize Lucide Icons
         lucide.createIcons();
 
-        const modal = document.getElementById('caseStudyModal');
-        function openModal() { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
-        function closeModal() { modal.classList.add('hidden'); document.body.style.overflow = 'auto'; }
-        // Close on clicking backdrop
-        window.onclick = function(event) { if (event.target == modal) { closeModal(); } }
+        // Modal DOM Elements
+        const cloudModal = document.getElementById('caseStudyModal');
+        const aiModal = document.getElementById('aiCaseStudyModal');
+
+        // Cloud Infra Modal Triggers
+        function openModal() { cloudModal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { cloudModal.classList.add('hidden'); document.body.style.overflow = 'auto'; }
+
+        // AI Infra Modal Triggers
+        function openAiModal() { aiModal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+        function closeAiModal() { aiModal.classList.add('hidden'); document.body.style.overflow = 'auto'; }
+
+        // Close on clicking backdrop anywhere
+        window.onclick = function(event) { 
+            if (event.target == cloudModal) { closeModal(); } 
+            if (event.target == aiModal) { closeAiModal(); } 
+        }
     </script>
 </body>
 </html>
