@@ -10,6 +10,9 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+        /* Style fix for native HTML5 backdrop dialog layout */
+        dialog::backdrop { background-color: rgba(2, 6, 23, 0.8); backdrop-filter: blur(4px); }
+        dialog[open] { display: flex; }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
@@ -46,9 +49,9 @@
                     <a href="#case-studies" class="inline-flex items-center gap-2 rounded-lg bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-all hover:bg-cyan-400 shadow-lg shadow-cyan-500/20">
                         <i data-lucide="terminal" class="w-4 h-4"></i> View Case Studies
                     </a>
-                    <a href="#contact" class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-slate-800 hover:text-white">
-                        <i data-lucide="mail" class="w-4 h-4"></i> Connect Executive Search
-                    </a>
+                    <button onclick="openContactModal()" class="cursor-pointer inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-slate-800 hover:text-white">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Get in Touch
+                    </button>
                 </div>
             </div>
         </section>
@@ -102,7 +105,7 @@
                     <div class="flex flex-wrap gap-1.5">
                         <span class="bg-slate-950 text-slate-300 text-xs px-2.5 py-1 rounded border border-slate-800">Azure Enterprise</span>
                         <span class="bg-slate-950 text-slate-300 text-xs px-2.5 py-1 rounded border border-slate-800">Hybrid Cloud</span>
-                        <span class="bg-slate-950 text-slate-300 text-xs px-2.5 py-1 rounded border border-slate-800">Cluster Disk Tuning</span>
+                        <span class="bg-slate-950 text-slate-300 text-xs px-2.5 py-1 rounded border border-slate-800">SQL Server Relational</span>
                     </div>
                 </div>
                 <!-- AI & Automation -->
@@ -114,8 +117,8 @@
                     <p class="text-sm text-slate-400 mb-4">Implementing intelligent workflows and deep infrastructure auto-remediation.</p>
                     <div class="flex flex-wrap gap-1.5">
                         <span class="bg-slate-950 text-slate-300 text-xs px-2.5 py-1 rounded border border-slate-800">Stateless AI Engines</span>
-                        <span class="bg-slate-950 text-slate-300 text-xs px-2.5 py-1 rounded border border-slate-800">Azure Databricks</span>
-                        <span class="bg-slate-950 text-slate-300 text-xs px-2.5 py-1 rounded border border-slate-800">GPO Automation</span>
+                        <span class="bg-slate-950 text-slate-300 text-xs px-2.5 py-1 rounded border border-slate-800">Azure Databricks ML</span>
+                        <span class="bg-slate-950 text-slate-300 text-xs px-2.5 py-1 rounded border border-slate-800">Log Correlation Loops</span>
                     </div>
                 </div>
                 <!-- Governance & Scale -->
@@ -144,16 +147,16 @@
             </div>
 
             <div class="space-y-6">
-                <!-- Case Study Card 1: Cloud -->
+                <!-- Case Study Card 1: Cloud/Data Engineering -->
                 <div class="group relative rounded-xl border border-slate-900 bg-slate-900/20 p-8 transition-all hover:bg-slate-900/40 hover:border-slate-800 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center">
                     <div class="max-w-2xl">
-                        <div class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-2">Cloud Optimization & Scalability</div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">Architecting High-Performance Azure Disks & Databricks Storage Clusters</h3>
+                        <div class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-2">Data Pipelines & Integration</div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">Azure Databricks ML Feature Ingestion & Log Correlation</h3>
                         <p class="text-sm text-slate-400 leading-relaxed">
-                            How an enterprise SaaS platform reconfigured dynamic cluster disk balancing strategies, implemented precise cloud cost monitors, and cleared critical storage latency blockages under extreme usage loads.
+                            How we designed an out-of-band telemetry ingestion layer to feed execution logs into Azure Databricks for machine learning workloads, while protecting hard dependencies on core relational SQL Server databases.
                         </p>
                     </div>
-                    <button onclick="openModal()" class="cursor-pointer shrink-0 inline-flex items-center gap-1 text-sm font-semibold text-white border border-slate-700 rounded-lg px-4 py-2 bg-slate-950 transition-all hover:bg-slate-900 hover:border-cyan-500/50 group-hover:translate-x-1">
+                    <button onclick="loadCaseStudy('case-study-azure.html')" class="cursor-pointer shrink-0 inline-flex items-center gap-1 text-sm font-semibold text-white border border-slate-700 rounded-lg px-4 py-2 bg-slate-950 transition-all hover:bg-slate-900 hover:border-cyan-500/50 group-hover:translate-x-1">
                         Read Case Study <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
@@ -161,13 +164,13 @@
                 <!-- Case Study Card 2: Autonomous AI -->
                 <div class="group relative rounded-xl border border-slate-900 bg-slate-900/20 p-8 transition-all hover:bg-slate-900/40 hover:border-slate-800 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center">
                     <div class="max-w-2xl">
-                        <div class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Agentic Infrastructure & Governance</div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-emerald-300 transition-colors">Orchestrating Gated, Stateless Multi-Agent Execution Engines</h3>
+                        <div class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Agentic Infrastructure & ML</div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-emerald-300 transition-colors">Stateless Multi-Agent Architectures with Closed-Loop ML Tuning</h3>
                         <p class="text-sm text-slate-400 leading-relaxed">
-                            How we engineered a stateless agent framework managed by a central Rule Engine and Execution Engine to fulfill strict enterprise operational SLAs and maintain reliable Human-in-the-Loop workflows.
+                            How we engineered a highly reliable stateless execution framework that pipes correlated run logs to Databricks, enabling the AI agent layer to continuously learn from historical behaviors.
                         </p>
                     </div>
-                    <button onclick="openAiModal()" class="cursor-pointer shrink-0 inline-flex items-center gap-1 text-sm font-semibold text-white border border-slate-700 rounded-lg px-4 py-2 bg-slate-950 transition-all hover:bg-slate-900 hover:border-emerald-500/50 group-hover:translate-x-1">
+                    <button onclick="loadCaseStudy('case-study-ai.html')" class="cursor-pointer shrink-0 inline-flex items-center gap-1 text-sm font-semibold text-white border border-slate-700 rounded-lg px-4 py-2 bg-slate-950 transition-all hover:bg-slate-900 hover:border-emerald-500/50 group-hover:translate-x-1">
                         Read Case Study <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
@@ -176,143 +179,143 @@
 
         <!-- Contact Section -->
         <section id="contact" class="py-16 text-center">
-            <h2 class="text-2xl font-bold tracking-tight text-white mb-4">Initiate Executive Engagement</h2>
+            <h2 class="text-2xl font-bold tracking-tight text-white mb-4">Initiate Professional Connection</h2>
             <p class="text-slate-400 max-w-lg mx-auto mb-8 text-sm">
-                Open to executive opportunities (CTO, Senior Director, Principal/Lead AI Solutions Architect) targeting premium tech hubs or global assignments.
+                Have a challenging architectural problem, an infrastructure optimization effort, or an enterprise technology initiative to evaluate?
             </p>
-            <div class="inline-flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-400">
-                <a href="mailto:your.email@example.com" class="flex items-center gap-2 hover:text-white transition-colors">
-                    <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i> Secure Email
-                </a>
-                <a href="https://linkedin.com" target="_blank" class="flex items-center gap-2 hover:text-white transition-colors">
-                    <i data-lucide="linkedin" class="w-4 h-4 text-cyan-400"></i> LinkedIn Professional Network
-                </a>
+            <div class="flex flex-col items-center justify-center gap-4">
+                <button onclick="openContactModal()" class="cursor-pointer inline-flex items-center gap-2 rounded-lg bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 transition-all hover:bg-cyan-400 shadow-lg shadow-cyan-500/20">
+                    <i data-lucide="send" class="w-4 h-4"></i> Open Direct Contact Portal
+                </button>
+                <div class="mt-4 flex gap-6 text-sm font-medium text-slate-400">
+                    <a href="https://linkedin.com" target="_blank" class="flex items-center gap-2 hover:text-white transition-colors">
+                        <i data-lucide="linkedin" class="w-4 h-4 text-cyan-400"></i> LinkedIn Network
+                    </a>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <!-- CLOUD CASE STUDY MODAL -->
-    <div id="caseStudyModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-3xl max-h-[85vh] overflow-y-auto shadow-2xl p-6 sm:p-8">
+    <!-- REUSABLE CASE STUDY DIALOG -->
+    <dialog id="caseStudyModal" class="items-center justify-center p-4 bg-transparent border-0 outline-none w-full max-w-3xl">
+        <div id="modalContentTarget" class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl p-6 sm:p-8">
+            <div class="text-slate-400 text-sm animate-pulse flex items-center gap-2">
+                <i data-lucide="loader-2" class="animate-spin w-4 h-4 text-cyan-400"></i> Resolving dynamic system logs...
+            </div>
+        </div>
+    </dialog>
+
+    <!-- SIMPLIFIED CONTACT ROUTER DIALOG -->
+    <dialog id="contactModal" class="items-center justify-center p-4 bg-transparent border-0 outline-none w-full max-w-md">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl p-6 sm:p-8">
             <div class="flex justify-between items-start border-b border-slate-800 pb-4 mb-6">
                 <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">Production Review</span>
-                    <h4 class="text-2xl font-bold text-white mt-1">Azure Databricks Capacity & IOPS Strategy</h4>
+                    <h4 class="text-xl font-bold text-white">Direct Message Router</h4>
+                    <p class="text-xs text-slate-400 mt-1">Specify parameters to construct direct message link</p>
                 </div>
-                <button onclick="closeModal()" class="cursor-pointer text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700 bg-slate-950 p-1.5 rounded-lg">
-                    <i data-lucide="x" class="w-5 h-5"></i>
+                <button onclick="closeContactModal()" class="cursor-pointer text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700 bg-slate-950 p-1.5 rounded-lg">
+                    <i data-lucide="x" class="w-4 h-4"></i>
                 </button>
             </div>
             
-            <div class="space-y-6 text-sm text-slate-300 leading-relaxed">
+            <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4 text-sm">
                 <div>
-                    <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2"><i data-lucide="alert-circle" class="w-4 h-4 text-amber-400"></i> The Architectural Problem</h5>
-                    <p>An enterprise SaaS ecosystem was encountering critical I/O throughput limits and unoptimized cluster disk scaling blocks on Azure during bulk processing schedules, threatening platform performance agreements and driving unforecasted cloud consumption overhead.</p>
-                </div>
-                <div>
-                    <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2"><i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i> The Engineering Strategy</h5>
-                    <p>Engineered an automated dynamic storage governance layer across Azure Databricks node matrices. Implemented advanced infrastructure tracking architectures to proactively handle block-level capacity adjustments before throughput degradation limits hit runtime workers.</p>
-                </div>
-                <div class="p-4 rounded-lg bg-slate-950 border border-slate-800 font-mono text-xs text-cyan-400">
-                    // Abstract Systems Flow Pattern <br>
-                    [Data Load Spikes] -> [Dynamic Telemetry Evaluation Monitor] -> [Auto-Scale Azure Storage Disks] -> [IOPS Optimization Pipeline Execution]
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Your Professional Email</label>
+                    <input type="email" id="senderEmail" required placeholder="name@company.com" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors">
                 </div>
                 <div>
-                    <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2"><i data-lucide="bar-chart-3" class="w-4 h-4 text-emerald-400"></i> The Business & Technical ROI</h5>
-                    <ul class="list-disc pl-5 space-y-1.5 text-slate-400">
-                        <li>Eliminated data storage latency bottlenecks under peak compute cycles.</li>
-                        <li>Reduced unoptimized, idle cloud disk provisioning overhead.</li>
-                        <li>Maintained strict high-volume application layer data integrity metrics.</li>
-                    </ul>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Context / Reason for Connection</label>
+                    <textarea id="connectReason" required rows="4" placeholder="Brief outline of enterprise architectural challenges, pipeline scale initiatives, or professional mandates..." class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors resize-none"></textarea>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- AI CASE STUDY MODAL -->
-    <div id="aiCaseStudyModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-3xl max-h-[85vh] overflow-y-auto shadow-2xl p-6 sm:p-8">
-            <div class="flex justify-between items-start border-b border-slate-800 pb-4 mb-6">
-                <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Production Review</span>
-                    <h4 class="text-2xl font-bold text-white mt-1">Orchestrating Enterprise Agentic AI Infrastructure</h4>
-                </div>
-                <button onclick="closeAiModal()" class="cursor-pointer text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700 bg-slate-950 p-1.5 rounded-lg">
-                    <i data-lucide="x" class="w-5 h-5"></i>
+                <button type="submit" class="w-full cursor-pointer inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-500 px-4 py-2.5 text-sm font-semibold text-slate-950 transition-all hover:bg-cyan-400">
+                    <i data-lucide="mail-forward" class="w-4 h-4"></i> Generate Email Package
                 </button>
-            </div>
-            
-            <div class="space-y-6 text-sm text-slate-300 leading-relaxed">
-                <div>
-                    <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2">
-                        <i data-lucide="alert-circle" class="w-4 h-4 text-amber-400"></i> The Operational Challenge: Non-Determinism vs. High SLAs
-                    </h5>
-                    <p>
-                        Deploying large language models into enterprise environments introduces major challenges regarding non-deterministic logic and unexpected behavior loops. For high-SLA enterprise ecosystems, allowing an autonomous agent to hold state locally creates system vulnerabilities and risks context drift outside of regulatory bounds.
-                    </p>
-                </div>
-                <div>
-                    <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2">
-                        <i data-lucide="shield-check" class="w-4 h-4 text-cyan-400"></i> The Strategy: High-SLA Determinism via Stateless Execution
-                    </h5>
-                    <p>
-                        Deliberately rejected stateful configurations to eliminate sticky routing dependencies and potential system drift. Instead, engineered an idempotent, <strong>stateless AI agent model</strong>. This model processes input context packets as a pure compute utility, strictly constrained at execution time by parameters passed from our centralized Rule Engine, Framework Engine, and Execution Engine.
-                    </p>
-                </div>
-
-                <!-- ASCII Architecture Topology -->
-                <div class="p-4 rounded-lg bg-slate-950 border border-slate-800 font-mono text-xs text-emerald-400 overflow-x-auto">
-[User Transaction Payload] ──> [Framework Engine] ──> [Rule Engine Validation]
-                                                           │ (Enforced Boundaries)
-                                                           ▼
-[Human-in-the-Loop Gateway] <── [Execution Engine] <── [Stateless Compute Agent]
-                </div>
-
-                <div>
-                    <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2">
-                        <i data-lucide="users" class="w-4 h-4 text-indigo-400"></i> Human-in-the-Loop & System Governance
-                    </h5>
-                    <p>
-                        To guarantee system-wide compliance, state serialization is decoupled from the agent and externalized to a secure tier. High-risk execution vectors are intercepted by an immutable <strong>Human-in-the-Loop verification layer</strong>, forcing structural state validation against organizational guidelines before transactions finalize.
-                    </p>
-                </div>
-                <div>
-                    <h5 class="text-white font-semibold text-base mb-2 flex items-center gap-2">
-                        <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Production Engineering Impacts
-                    </h5>
-                    <ul class="list-disc pl-5 space-y-1.5 text-slate-400">
-                        <li>Achieved absolute auditability with fully replicable, self-contained transaction histories.</li>
-                        <li>Protected critical runtime SLAs by allowing the execution engine to seamlessly terminate and recycle hanging threads without state corruption.</li>
-                        <li>Enforced uniform alignment across all automated workloads against existing organizational constraints.</li>
-                    </ul>
-                </div>
-            </div>
+            </form>
         </div>
-    </div>
+    </dialog>
 
-    <!-- Initialize Lucide Icons & Multi-Modal Controls -->
+    <!-- Asynchronous View & Action Controller Script -->
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Modal DOM Elements
-        const cloudModal = document.getElementById('caseStudyModal');
-        const aiModal = document.getElementById('aiCaseStudyModal');
+        // Dialog Objects
+        const caseStudyDialog = document.getElementById('caseStudyModal');
+        const contactDialog = document.getElementById('contactModal');
+        const contentTarget = document.getElementById('modalContentTarget');
 
-        // Cloud Infra Modal Triggers
-        function openModal() { cloudModal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
-        function closeModal() { cloudModal.classList.add('hidden'); document.body.style.overflow = 'auto'; }
-
-        // AI Infra Modal Triggers
-        function openAiModal() { aiModal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
-        function closeAiModal() { aiModal.classList.add('hidden'); document.body.style.overflow = 'auto'; }
-
-        // Close on clicking backdrop anywhere
-        window.onclick = function(event) { 
-            if (event.target == cloudModal) { closeModal(); } 
-            if (event.target == aiModal) { closeAiModal(); } 
+        // Dynamic Asynchronous File Fetcher Engine
+        async function loadCaseStudy(fileName) {
+            caseStudyDialog.showModal();
+            document.body.style.overflow = 'hidden';
+            try {
+                const response = await fetch(fileName);
+                if (!response.ok) throw new Error(`HTTP network malfunction loading ${fileName}`);
+                const htmlContent = await response.text();
+                contentTarget.innerHTML = htmlContent;
+                lucide.createIcons();
+            } catch (error) {
+                console.error(error);
+                contentTarget.innerHTML = `
+                    <div class="text-rose-400 p-4 border border-rose-900/30 bg-rose-950/20 rounded-xl">
+                        <h4 class="font-bold flex items-center gap-2"><i data-lucide="alert-triangle"></i> Resolution Fault</h4>
+                        <p class="text-xs mt-1 text-slate-400">Unable to load technical schema profile: ${fileName}. Ensure the file exists in your repository root.</p>
+                    </div>`;
+                lucide.createIcons();
+            }
         }
+
+        function closeCaseStudy() {
+            caseStudyDialog.close();
+            document.body.style.overflow = 'auto';
+            contentTarget.innerHTML = `
+                <div class="text-slate-400 text-sm animate-pulse flex items-center gap-2">
+                    <i data-lucide="loader-2" class="animate-spin w-4 h-4 text-cyan-400"></i> Resolving dynamic system logs...
+                </div>`;
+        }
+
+        // Contact Modal Logic
+        function openContactModal() {
+            contactDialog.showModal();
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal() {
+            contactDialog.close();
+            document.body.style.overflow = 'auto';
+            document.getElementById('contactForm').reset();
+        }
+
+        // Form Submission to Mailto Link Generation
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            
+            const sender = document.getElementById('senderEmail').value;
+            const reason = document.getElementById('connectReason').value;
+            
+            // Hardcoded recipient configuration
+            const recipient = "your.email@example.com"; 
+            const subject = encodeURIComponent("Professional Connection Request via AS.dev");
+            
+            const emailBody = encodeURIComponent(
+                `Sender Contact: ${sender}\n\n` +
+                `Context / Connection Purpose:\n` +
+                `=========================================\n` +
+                `${reason}\n` +
+                `=========================================\n\n` +
+                `Generated securely via deployment matrix at AS.dev`
+            );
+            
+            // Fire native client application mail context transfer
+            window.location.href = `mailto:${recipient}?subject=${subject}&body=${emailBody}`;
+            
+            closeContactModal();
+        }
+
+        // Close on clicking backdrop area backgrounds
+        caseStudyDialog.addEventListener('click', (e) => { if (e.target === caseStudyDialog) closeCaseStudy(); });
+        contactDialog.addEventListener('click', (e) => { if (e.target === contactDialog) closeContactModal(); });
     </script>
 </body>
 </html>
