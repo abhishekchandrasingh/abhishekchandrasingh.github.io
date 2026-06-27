@@ -1,0 +1,113 @@
+<div class="flex justify-between items-start border-b border-slate-800 pb-4 mb-6">
+  <div>
+    <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">Field Notes</span>
+    <h4 class="text-2xl font-bold text-white mt-1">Architecture Briefs & Technical Positions</h4>
+    <p class="text-xs text-slate-400 mt-2 max-w-xl leading-relaxed">
+      Perspectives shaped by real enterprise delivery — not theory. Each brief distills a pattern, failure mode, or strategic position encountered across large-scale infrastructure and AI transformation programs.
+    </p>
+  </div>
+  <button onclick="closeCaseStudy()" class="cursor-pointer text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700 bg-slate-950 p-1.5 rounded-lg">
+    <i data-lucide="x" class="w-5 h-5"></i>
+  </button>
+</div>
+
+<div class="space-y-8 text-sm">
+
+  <!-- Note 1 -->
+  <article class="rounded-xl border border-slate-800 bg-slate-950/60 p-6 hover:border-slate-700 transition-colors">
+    <div class="flex items-center gap-2 mb-3">
+      <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-400">AI Governance</span>
+      <span class="text-[10px] text-slate-600">·</span>
+      <span class="text-[10px] text-slate-500 font-mono">Brief #001</span>
+    </div>
+    <h5 class="text-base font-bold text-white mb-3">The Cost-Cut Trap: Why AI Must Drive Revenue, Not Reduce Headcount</h5>
+    <div class="text-slate-400 leading-relaxed space-y-3">
+      <p>
+        The most common AI adoption mistake at the enterprise level is framing the ROI entirely around headcount displacement. When engineering capacity freed by AI is simply deleted from the org chart, two things happen simultaneously: the business loses its compounding growth surface, and AI infrastructure costs — compute, vector indexes, API licensing — begin accumulating directly in COGS with no offsetting revenue to show for it.
+      </p>
+      <p>
+        The correct frame is the <strong class="text-slate-200">Revenue Straddle</strong>. Reclaimed developer hours become new product capability. A lean, AI-augmented team can support market expansions that would have required linear headcount scaling. The AI infrastructure cost is easily absorbed when it's generating top-line expansion, not merely reducing a line item on a staff plan.
+      </p>
+      <p class="text-slate-500 text-xs border-l-2 border-slate-800 pl-3">
+        Practical signal: If your AI business case deck shows only cost savings and no revenue acceleration scenarios, you're building a cost center, not a growth engine. Rebuild the model with a FinOps lens that connects compute spend directly to product delivery velocity and new ARR potential.
+      </p>
+    </div>
+  </article>
+
+  <!-- Note 2 -->
+  <article class="rounded-xl border border-slate-800 bg-slate-950/60 p-6 hover:border-slate-700 transition-colors">
+    <div class="flex items-center gap-2 mb-3">
+      <span class="text-[10px] font-bold uppercase tracking-widest text-cyan-400">Agentic Design</span>
+      <span class="text-[10px] text-slate-600">·</span>
+      <span class="text-[10px] text-slate-500 font-mono">Brief #002</span>
+    </div>
+    <h5 class="text-base font-bold text-white mb-3">Stateless vs Stateful Agents: The SLA Argument No One Is Making</h5>
+    <div class="text-slate-400 leading-relaxed space-y-3">
+      <p>
+        There is a persistent assumption in enterprise AI architecture discussions that stateful agents — those that carry memory and context across runs — are inherently more capable and therefore preferable. This is true in consumer applications. In high-SLA enterprise environments, it is often a liability.
+      </p>
+      <p>
+        Stateful agents accumulate context drift. Over time, memory corruption, stale decision weights, and non-deterministic routing loops degrade output quality in ways that are extremely difficult to audit and nearly impossible to reproduce in post-incident reviews. In regulated industries where every decision needs a clean audit trail, this is a compliance exposure.
+      </p>
+      <p>
+        <strong class="text-slate-200">Stateless execution with out-of-band learning</strong> separates the concerns cleanly. The agent runs as a pure compute utility — bounded by centralized rule and execution engines — while telemetry from every run streams to an external analytics layer for continuous model improvement. You get the learning benefits of a stateful system without embedding that complexity into the execution path.
+      </p>
+      <p class="text-slate-500 text-xs border-l-2 border-slate-800 pl-3">
+        Design heuristic: If you cannot replay any agent run from its inputs alone and get deterministic output, your architecture has hidden state. Find it and externalize it before it finds you during an incident.
+      </p>
+    </div>
+  </article>
+
+  <!-- Note 3 -->
+  <article class="rounded-xl border border-slate-800 bg-slate-950/60 p-6 hover:border-slate-700 transition-colors">
+    <div class="flex items-center gap-2 mb-3">
+      <span class="text-[10px] font-bold uppercase tracking-widest text-indigo-400">Architecture Evolution</span>
+      <span class="text-[10px] text-slate-600">·</span>
+      <span class="text-[10px] text-slate-500 font-mono">Brief #003</span>
+    </div>
+    <h5 class="text-base font-bold text-white mb-3">The Compounding Cost of Missing an Architectural Evolution Milestone</h5>
+    <div class="text-slate-400 leading-relaxed space-y-3">
+      <p>
+        Technology transformation is not a series of optional upgrades. Each architectural milestone — from bare-metal to managed services, from managed services to cloud SaaS, from cloud SaaS to AI-native — builds the organizational muscle and system foundations that make the next leap possible at reasonable cost.
+      </p>
+      <p>
+        Organizations that skip a milestone do not simply delay the benefit. They accumulate compounding technical debt at the layer they bypassed. A team that moves to cloud without establishing proper DevOps discipline carries manual deployment risk into every cloud workload. A team that adopts AI tooling without a structured data telemetry layer has no feedback signal to improve on.
+      </p>
+      <p>
+        The pattern repeats: missed structural evolution → compensatory workarounds → debt accumulation → exponentially higher cost to bridge the gap later. What would have taken six months at the right time takes two years and a full re-architecture three phases later.
+      </p>
+      <p class="text-slate-500 text-xs border-l-2 border-slate-800 pl-3">
+        Audit question for your organization: Can you trace a direct line from your current AI architecture decisions back through your DevOps maturity, your cloud cost governance model, and your data telemetry infrastructure? If any link in that chain is missing, you are building on a gap.
+      </p>
+    </div>
+  </article>
+
+  <!-- Note 4 -->
+  <article class="rounded-xl border border-slate-800 bg-slate-950/60 p-6 hover:border-slate-700 transition-colors">
+    <div class="flex items-center gap-2 mb-3">
+      <span class="text-[10px] font-bold uppercase tracking-widest text-amber-400">Developer Productivity</span>
+      <span class="text-[10px] text-slate-600">·</span>
+      <span class="text-[10px] text-slate-500 font-mono">Brief #004</span>
+    </div>
+    <h5 class="text-base font-bold text-white mb-3">AI Coding Assistants Only Work If Your Repository Is Designed for Them</h5>
+    <div class="text-slate-400 leading-relaxed space-y-3">
+      <p>
+        Most enterprise AI coding assistant rollouts plateau at low adoption rates within three months. The tooling works; the problem is that the repositories it is operating on were designed for humans navigating with IDE search, not for AI models parsing context windows.
+      </p>
+      <p>
+        An AI coding assistant is only as good as the context it receives at inference time. Monorepo structures without clear module boundaries, inconsistent naming conventions, absent or outdated inline documentation, and no standardized instruction profiles mean the model is constantly inferring intent rather than executing against clear specification. The result is suggestions that are plausible but wrong for your specific codebase.
+      </p>
+      <p>
+        The fix is upstream: <strong class="text-slate-200">design repositories to be AI-readable</strong>. Standardized folder conventions, co-located context files that describe module intent, consistent comment patterns, and team-level instruction profiles loaded into the assistant's context at session start. These changes benefit human developers as well, but the AI productivity multiplier is disproportionately large.
+      </p>
+      <p class="text-slate-500 text-xs border-l-2 border-slate-800 pl-3">
+        Measurement: Track AI suggestion acceptance rate by repository. Low acceptance in a specific repo almost always traces to context quality, not model capability. Fix the repo, not the prompt.
+      </p>
+    </div>
+  </article>
+
+  <div class="pt-4 border-t border-slate-800 text-center">
+    <p class="text-xs text-slate-500">More briefs added periodically. Connect via the contact form to discuss any of these topics directly.</p>
+  </div>
+
+</div>
